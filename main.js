@@ -6,20 +6,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const sound = new Audio('loveSong.mp3');
     let isPlaying = false;
     let score = 0;
+    let isClickProcessing = false; // 클릭 처리 중인지 여부
 
     // 이미지 클릭 이벤트 (모바일과 데스크탑 모두 지원)
     img.addEventListener('mousedown', handleImageClick); // 데스크탑
     img.addEventListener('touchstart', handleImageClick); // 모바일
 
-    // 이미지 클릭 해제 이벤트 (모바일과 데스크탑 모두 지원)
-    img.addEventListener('mouseup', handleImageRelease); // 데스크탑
-    img.addEventListener('touchend', handleImageRelease); // 모바일
-
     button.addEventListener('click', () => {
         modal_screen.style.display = 'none';
     });
 
-    function handleImageClick() {
+    function handleImageClick(event) {
+        if (isClickProcessing) {
+            return; // 이미 클릭 처리 중이면 무시
+        }
+        isClickProcessing = true;
+
         if (img.src.endsWith('kk.jpg')) {
             img.src = 'kk2.jpg';
             addToCounter();
@@ -33,12 +35,11 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             img.src = 'kk.jpg';
         }
-    }
 
-    function handleImageRelease() {
-        if (img.src.endsWith('kk2.jpg')) {
-            img.src = 'kk.jpg';
-        }
+        // 클릭 처리 후 잠시 후에 클릭 처리 플래그를 해제하여 다시 클릭 가능하도록 함
+        setTimeout(() => {
+            isClickProcessing = false;
+        }, 500); // 0.5초 후에 클릭 가능 상태로 변경
     }
 
     function playSound() {
