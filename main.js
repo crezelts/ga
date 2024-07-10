@@ -7,8 +7,19 @@ document.addEventListener('DOMContentLoaded', function() {
     let isPlaying = false;
     let score = 0;
 
-    // 이미지 클릭 이벤트
-    img.addEventListener('mousedown', () => {
+    // 이미지 클릭 이벤트 (모바일과 데스크탑 모두 지원)
+    img.addEventListener('mousedown', handleImageClick); // 데스크탑
+    img.addEventListener('touchstart', handleImageClick); // 모바일
+
+    // 이미지 클릭 해제 이벤트 (모바일과 데스크탑 모두 지원)
+    img.addEventListener('mouseup', handleImageRelease); // 데스크탑
+    img.addEventListener('touchend', handleImageRelease); // 모바일
+
+    button.addEventListener('click', () => {
+        modal_screen.style.display = 'none';
+    });
+
+    function handleImageClick() {
         if (img.src.endsWith('kk.jpg')) {
             img.src = 'kk2.jpg';
             addToCounter();
@@ -22,18 +33,13 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             img.src = 'kk.jpg';
         }
-    });
+    }
 
-    // 이미지 클릭 해제 이벤트
-    img.addEventListener('mouseup', () => {
+    function handleImageRelease() {
         if (img.src.endsWith('kk2.jpg')) {
             img.src = 'kk.jpg';
         }
-    });
-
-    button.addEventListener('click', () => {
-        modal_screen.style.display = 'none';
-    });
+    }
 
     function playSound() {
         if (!isPlaying) {
