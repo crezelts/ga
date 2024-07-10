@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     img.addEventListener('click', function() {
         const now = Date.now();
-        if (now - lastClickTime < 1) {
+        if (now - lastClickTime < 500) {
             return; // 클릭 간격이 500ms 미만인 경우 무시
         }
         
