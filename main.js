@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // 클릭 처리 후 잠시 후에 클릭 처리 플래그를 해제하여 다시 클릭 가능하도록 함
         setTimeout(() => {
             isClickProcessing = false;
-        }, 500); // 0.5초 후에 클릭 가능 상태로 변경
+        }, 100); // 0.5초 후에 클릭 가능 상태로 변경
     }
 
     function playSound() {
