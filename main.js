@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let score = 0;
 
     // 이미지 클릭 이벤트
-    img.addEventListener('mousedown', () => {
+    img.addEventListener('touchstart', () => {
         if (img.src.endsWith('kk.jpg')) {
             img.src = 'kk2.jpg';
             addToCounter();
