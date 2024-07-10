@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const button = document.querySelector('.button');
     const modal_screen = document.querySelector('.modal_screen');
     const sound = new Audio('loveSong.mp3');
+    const count_100_music = new Audio('count100_music.mp3')
     let isPlaying = false;
     let score = 0;
     let isClickProcessing = false; // 클릭 처리 중인지 여부
@@ -25,9 +26,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (img.src.endsWith('kk.jpg')) {
             img.src = 'kk2.jpg';
             addToCounter();
-            if (score === 18 || score === 1 || score === 30 || score === 100) {
+            if (score === 18 || score === 1 || score === 30) {
                 heart.style.display = "block";
                 playSound();
+            } else if (score === 100) {
+                img.src = 'lovelove.png';
+                heart.style.display = "block";
+                playSound100();
             } else {
                 heart.style.display = "none";
                 stopSound();
@@ -55,6 +60,15 @@ document.addEventListener('DOMContentLoaded', function() {
             sound.pause();
             sound.currentTime = 0;
             isPlaying = false;
+        }
+    }
+
+    // count 100
+    function playSound100() {
+        if (!isPlaying) {
+            count_100_music = 0
+            count_100_music.play()
+            isPlaying = true
         }
     }
 

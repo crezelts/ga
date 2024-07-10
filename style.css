@@ -105,3 +105,18 @@ body {
     text-decoration: none;
     color: rgb(14, 110, 255);
 }
+.link_txt2 {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+}
+.link_txt2:hover {
+    color: rgb(255, 18, 97);
+}
+.instagram {
+    width: 1vw;
+    height: auto;
+    position: relative;
+    top: 6px;
+    z-index: 1;
+}
