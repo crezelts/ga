@@ -37,7 +37,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 이미지 클릭 해제 이벤트
     img.addEventListener('mouseup', () => {
-        // 이미지 클릭 해제 시에 추가적인 동작이 필요하다면 이곳에 추가하십시오.
+        if (!specialScores.includes(score) && img.src.endsWith('kk2.jpg')) {
+            img.src = 'kk.jpg';
+        }
     });
 
     button.addEventListener('click', () => {
