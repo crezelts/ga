@@ -8,11 +8,25 @@
 </head>
 <body>
     <div class="container">
+        <div class="modal_screen">
+            <button class="button">X</button>
+            <span class="update_modalScreen">-- 이광민 팝 업데이트 --</span>
+            <ul class="update_txt">
+                <li>1. 특정 숫자에 도달 했을 때 이벤트가 일어납니다.</li>
+                <li>2. 속도 개선을 했습니다. 이로 인해 이전 보다 더 빠른 속도로 사용이 가능합니다.</li>
+                <li>3. 오픈소스가 공개되었습니다. 이제 사용자가 원하는 사진을 통해서 커스텀이 가능합니다.</li>
+                <li>⚠️주의사항⚠️: 특정 숫자에 도달 했을 때 소리가 발생하니 유의 바랍니다.</li>
+            </ul>
+        </div>
+        <span class="heart">이광민 ♥️ 김나경</span>
         <h1>이광민 pop</h1>
         <p id="target">0</p>
         <img src="./kk.jpg" id="popcat1">
+        <span class="txt">코드가 궁금한다면?</span>
+        <a class="link_txt" href="https://github.com/crezelts/ga" target="_blank">오픈소스 주소</a>
     </div>
-    <script>
+    <script src="./main.js"></script>
+    <!-- <script>
         window.onload = () => {
             let img = document.querySelector('#popcat1')
             let counter = document.querySelector('#target')
@@ -32,6 +46,6 @@
                 counter.innerHTML = score
             }
         }
-    </script>
+    </script> -->
 </body>
 </html>
