@@ -82,6 +82,10 @@ body {
 
 .heart {
     color: rgb(202, 37, 65);
+    position: fixed;
+    top: 38%;
+    font-size: 30px;
+    font-weight: 700;
 }
 
 #popcat1 {
