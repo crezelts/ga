@@ -84,15 +84,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const button = document.querySelector('.button')
     let score = 0
 
-    // 'mousedown'과 'touchstart' 대신 'pointerdown' 이벤트 사용
+    // 'pointerdown' 이벤트 사용
     img.addEventListener('pointerdown', handleClick)
 
-    button.addEventListener('click', () => {
-        modal_screen.style.display = 'none';
-    });
+    // 버튼 클릭 이벤트 리스너 추가
+    button.addEventListener('click', hideModal)
 
     function handleClick(event) {
-        // 기본 동작 방지 (터치 기기에서 필요)
+        // 기본 동작 방지
         event.preventDefault();
 
         img.src = 'kk2.jpg'
@@ -107,6 +106,9 @@ document.addEventListener('DOMContentLoaded', function() {
         score++
         document.querySelector('#target').innerHTML = score
     }
-})
 
-```
+    // 모달 숨기는 함수
+    function hideModal() {
+        modal_screen.style.display = 'none';
+    }
+})
