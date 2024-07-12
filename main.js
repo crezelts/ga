@@ -84,31 +84,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const button = document.querySelector('.button')
     let score = 0
 
-    // 'pointerdown' 이벤트 사용
-    img.addEventListener('pointerdown', handleClick)
+    img.addEventListener('mousedown', handleClick)
+    img.addEventListener('touchstart', handleClick)
 
-    // 버튼 클릭 이벤트 리스너 추가
-    button.addEventListener('click', hideModal)
+    button.addEventListener('click', () => {
+        modal_screen.style.display = 'none';
+    });
 
-    function handleClick(event) {
-        // 기본 동작 방지
-        event.preventDefault();
-
+    function handleClick() {
         img.src = 'kk2.jpg'
 
         setTimeout(() => {
             img.src = 'kk.jpg'
             addCounter()
-        }, 50)  
+        }, 300)  
     }
-
     function addCounter() {
         score++
         document.querySelector('#target').innerHTML = score
     }
 
-    // 모달 숨기는 함수
-    function hideModal() {
-        modal_screen.style.display = 'none';
-    }
-})
+    })
