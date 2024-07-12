@@ -77,20 +77,24 @@
 //         document.querySelector('#target').innerHTML = score;
 //     }
 // });
+
 document.addEventListener('DOMContentLoaded', function() {
     const img = document.querySelector('#popcat1')
     const modal_screen = document.querySelector('.modal_screen')
     const button = document.querySelector('.button')
     let score = 0
 
-    img.addEventListener('mousedown', handleClick)
-    img.addEventListener('touchstart', handleClick)
+    // 'mousedown'과 'touchstart' 대신 'pointerdown' 이벤트 사용
+    img.addEventListener('pointerdown', handleClick)
 
     button.addEventListener('click', () => {
         modal_screen.style.display = 'none';
     });
 
-    function handleClick() {
+    function handleClick(event) {
+        // 기본 동작 방지 (터치 기기에서 필요)
+        event.preventDefault();
+
         img.src = 'kk2.jpg'
 
         setTimeout(() => {
@@ -98,9 +102,11 @@ document.addEventListener('DOMContentLoaded', function() {
             addCounter()
         }, 300)  
     }
+
     function addCounter() {
         score++
         document.querySelector('#target').innerHTML = score
     }
+})
 
-    })
+```
