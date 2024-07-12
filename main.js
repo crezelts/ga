@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             img.src = 'kk.jpg'
             addCounter()
-        }, 10)  
+        }, 100)  
     }
 
     function addCounter() {
