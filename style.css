@@ -19,6 +19,7 @@
     border-radius: 10px;
     box-shadow: 0 0 10px black;
 }
+
 .button {
     border: 0;
     background-color: black;
@@ -28,13 +29,15 @@
     max-height: 5vh;
     margin-left: 90%;
 }
+
 .update_modalScreen {
     position: relative;
-    top:-37px;
+    top: -37px;
     color: white;
     font-weight: 700;
     line-height: 50px;
-}   
+}
+
 .update_txt {
     position: relative;
     top: 0px;
@@ -42,6 +45,7 @@
     color: white;
     line-height: 50px;
 }
+
 .update_txt_hidden {
     position: relative;
     top: 0px;
@@ -60,10 +64,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    -webkit-user-select:none;
-    -moz-user-select:none;
-    -ms-user-select:none;
-    user-select:none
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
 }
 
 .container {
@@ -71,10 +76,12 @@ body {
     align-items: center;
     flex-direction: column;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.7); /* 배경색과 투명도 조정 */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* 배경색과 투명도 조정 */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    /* 그림자 효과 */
 }
 
 .container h1 {
@@ -98,9 +105,11 @@ body {
 
 #popcat1 {
     width: 400px;
-    height: auto; /* 이미지 높이 자동 조정 */
+    height: auto;
+    /* 이미지 높이 자동 조정 */
     cursor: pointer;
-    transition: transform 0.2 ease; /* 변환 애니메이션 */
+    transition: transform 0.2 ease;
+    /* 변환 애니메이션 */
 }
 
 .txt {
@@ -109,11 +118,13 @@ body {
     font-size: 15px;
     color: white;
 }
+
 .link_txt {
     text-decoration: none;
     color: rgb(14, 110, 255);
     line-height: 40px;
 }
+
 .link_txt2 {
     text-decoration: none;
     color: black;
@@ -121,6 +132,7 @@ body {
     line-height: 30px;
     font-size: 20px;
 }
+
 .link_txt2:hover {
     color: rgb(255, 18, 97);
 }
