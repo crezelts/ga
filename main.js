@@ -77,6 +77,7 @@
 //         document.querySelector('#target').innerHTML = score;
 //     }
 // });
+
 document.addEventListener('DOMContentLoaded', function() {
     const img = document.querySelector('#popcat1')
     const modal_screen = document.querySelector('.modal_screen')
