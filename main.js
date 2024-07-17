@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 300)
     }
     function addCounter() {
-        score += 1
+        score += score
         document.querySelector('#target').innerHTML = score
     }
 
