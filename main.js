@@ -78,18 +78,12 @@
 //     }
 // });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const img = document.querySelector('#popcat1')
-    const modal_screen = document.querySelector('.modal_screen')
-    const button = document.querySelector('.button')
     let score = 0
 
     img.addEventListener('mousedown', handleClick)
     img.addEventListener('touchstart', handleClick)
-
-    button.addEventListener('click', () => {
-        modal_screen.style.display = 'none';
-    });
 
     function handleClick() {
         img.src = 'kk2.jpg'
@@ -97,11 +91,11 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             img.src = 'kk.jpg'
             addCounter()
-        }, 300)  
+        }, 300)
     }
     function addCounter() {
         score++
         document.querySelector('#target').innerHTML = score
     }
 
-    })
+})
