@@ -1,6 +1,6 @@
 const fetchPosts = async () => {
     try {
-        const response = await fetch("https://gwangmins.netlify.app/api/crezelt", {
+        const response = await fetch("https://https://gwanmin18.netlify.app/api/crezelt", {
             cache: "no-store"
         })
         if (!response.ok) {
